@@ -4,8 +4,9 @@ import org.nevermind.Geometric;
 
 public class Triangle implements Geometric {
 
-    Rectangle rectangle;
-    double a, b, c;
+    private Rectangle rectangle;
+    private double a, b, c;
+    private double p;
 
     public Triangle() {
     }
@@ -23,9 +24,15 @@ public class Triangle implements Geometric {
         this.c = c;
     }
 
-    public double calculateArea() {
-        //TODO
-        return a;
+    public double calculateSquare() {
+        double s;
+        p = (a + b + c) / 2;
+        s = Math.sqrt(p * ((p - a) * (p - b) * (p - c)));
+        return s;
+    }
+
+    private void init() {
+        System.out.println("I'm a object #2 (Triangle)");
     }
 
     public Rectangle getRectangle() {
@@ -59,4 +66,6 @@ public class Triangle implements Geometric {
     public void setC(double c) {
         this.c = c;
     }
+
+
 }

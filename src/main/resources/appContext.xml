@@ -4,11 +4,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd">
 
     <bean id="rectangle" class="entity.Rectangle" init-method="init">
-        <property name="length" value="6"/>
-        <property name="width" value="4"/>
+        <property name="length" value="4"/>
+        <property name="width" value="2"/>
     </bean>
 
+    <bean id="triangle" class="entity.Triangle" init-method="init">
+        <constructor-arg ref="rectangle"/>
+        <constructor-arg value="4"/>
+        <constructor-arg value="5"/>
+        <constructor-arg value="6"/>
+    </bean>
 
+    <bean id="circle" class="entity.Circle" init-method="init">
+        <constructor-arg value="2.5"/>
+        <constructor-arg ref="triangle"/>
+        <constructor-arg ref="rectangle"/>
+    </bean>
 
 
 </beans>

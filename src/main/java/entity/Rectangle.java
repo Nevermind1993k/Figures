@@ -15,7 +15,7 @@ public class Rectangle implements Geometric {
     }
 
 
-    public double calculateArea() {
+    public double calculateSquare() {
         return length * width;
     }
 

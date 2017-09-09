@@ -4,7 +4,9 @@ import org.nevermind.Geometric;
 
 public class Circle implements Geometric {
 
-    double radius;
+    private double radius;
+    private Triangle triangle;
+    private Rectangle rectangle;
 
     public Circle() {
     }
@@ -13,7 +15,13 @@ public class Circle implements Geometric {
         this.radius = radius;
     }
 
-    public double calculateArea() {
+    public Circle(double radius, Triangle triangle, Rectangle rectangle) {
+        this.radius = radius;
+        this.triangle = triangle;
+        this.rectangle = rectangle;
+    }
+
+    public double calculateSquare() {
         return Math.PI * Math.pow(radius, 2);
     }
 
