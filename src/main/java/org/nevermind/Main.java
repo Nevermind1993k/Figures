@@ -28,7 +28,10 @@ public class Main {
         figuresList.add(circle);
 
         for (int i = 0; i < figuresList.size(); i++) {
-            Geometric geometric = figuresList.get(i);
+            System.out.println("Full square of figure #" + (i + 1) + " = " + figuresList.get(i).calculateSquare());
+        }
+
+        for (Geometric geometric : figuresList) {
             if (geometric.equals(rectangle)) {
                 sRectangle = rectangle.calculateSquare();
             } else if (geometric.equals(triangle)) {
@@ -36,18 +39,17 @@ public class Main {
             } else if (geometric.equals(circle)) {
                 sCircle = circle.calculateSquare() - (sTriangle + sRectangle);
             }
-            System.out.println("Full square of figure #" + (i + 1) + " = " + figuresList.get(i).calculateSquare());
         }
 
+
+        globalSum = sRectangle + sTriangle + sCircle;
         System.out.println("************************");
         System.out.println("Square of figure #1 = " + sRectangle);
         System.out.println("Square of figure #2 = " + sTriangle);
         System.out.println("Square of figure #3 = " + sCircle);
-        globalSum = sRectangle + sTriangle + sCircle;
         System.out.println("Global square of all figures = " + globalSum);
 
 
-        context.registerShutdownHook();
 
     }
 }
